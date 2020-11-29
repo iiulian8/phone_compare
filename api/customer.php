@@ -1,18 +1,29 @@
 <?php
-include_once 'customer.php';
-if(isset(trim($_POST['save'])))
-{	 
-	 $name = trim($_POST['customer_name']);
-	 $email = trim($_POST['customer_email']);
-	 $tel = trim($_POST['customer_tel']);
-	 $sql = "INSERT INTO Customer (customer_name, customer_email, customer_tel)
-	 VALUES ('$customer_name','$customer_email','$customer_tel')";
-	 if (mysqli_query($conn, $sql)) {
-		echo "New record created successfully !";
-	 } else {
-		echo "Error: " . $sql . "
-" . mysqli_error($conn);
-	 }
-	 mysqli_close($conn);
+
+include 'db_connect.php';
+
+echo "<pre>";
+    print_r($_POST);
+echo "</pre>";
+
+if(isset($_POST['customer_email']) && $_POST['customer_email'] != ''){
+
+    if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
+
+        $customerName = trim($_POST['customer_name']);
+        $customerEmail = trim($_POST['customer_email']);
+        $customerMessage = trim($_POST['customer_message']);
+
+        $to = "liacuantongeorge@gmail.com";
+        $body = "";
+
+        $body .= "From: ".$customerName. "\r\n";
+        $body .= "Email: ".$customerEmail. "\r\n";
+        $body .= "Message: ".$customerMessage. "\r\n";
+
+        mail($to,$body);
+
+    }
 }
+
 ?>
