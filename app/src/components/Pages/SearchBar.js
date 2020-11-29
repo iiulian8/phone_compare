@@ -13,7 +13,7 @@ function SearchBar() {
     
     useEffect(() => {
         function getObjects() {
-            fetch('http://localhost/comparison_project/api/fetch_objects.php')
+            fetch('http://localhost/phone_compare/api/fetch_objects.php')
                 .then(response => response.json())
                 .then(data => setPArr([...data])
                 )
