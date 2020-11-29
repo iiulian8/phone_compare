@@ -13,10 +13,10 @@ function Home(){
 			        <h1>NEED A SMARTPHONE?</h1>
                     <p>We can save you time and money<br></br>by finding the best deal for you</p><br></br>
                     <div id="button-container">
-                <NavLink className = 'cta' activeClassName='active' to={'/Comparison'}>
-          Compare Phones
-          </NavLink>
-		        </div>
+                		<NavLink className = 'cta' activeClassName='active' to={'/Comparison'}>
+         				 Compare Phones
+          				</NavLink>
+		        	</div>
 		        </div>
 		        <a href="#section2" id="chevron"><i className="fa fa-chevron-down" aria-hidden="true"></i></a>
 	        </section>

@@ -655,6 +655,11 @@ footer #copyright{
 		right: 3%;
 		transform: translate(-3%, -20%);
 		text-align: end;
+		display: flex;
+		flex-direction: column;
+	}
+	#section1 #welcome-message #button-container{
+		align-self: flex-end;
 	}
 	.img{
 		display: flex;
