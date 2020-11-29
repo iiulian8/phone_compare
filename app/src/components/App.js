@@ -13,10 +13,6 @@ import { contextBasket } from './Contexts/Basket';
 const App = (props) => {
   const [basket, updateBasket] = useState([]);
 
-  useEffect(() => {
-    console.log(basket);
-  }, [basket])
-
   return (
 
     <BrowserRouter>

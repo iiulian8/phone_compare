@@ -1,29 +1,23 @@
 <?php
+header('Access-Control-Allow-Origin: *');
+header('Content-type: application/json');
 
 include 'db_connect.php';
 
-echo "<pre>";
-    print_r($_POST);
-echo "</pre>";
+$name = trim($_POST['customer_name']);
+$email = trim($_POST['customer_email']);
+$phone = trim($_POST['customer_tel']);
 
-if(isset($_POST['customer_email']) && $_POST['customer_email'] != ''){
 
-    if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
 
-        $customerName = trim($_POST['customer_name']);
-        $customerEmail = trim($_POST['customer_email']);
-        $customerMessage = trim($_POST['customer_message']);
+$sql = "INSERT INTO Customer (customer_name, customer_email, customer_tel) VALUES ('$name', '$email', '$phone')";
+    
+if (mysqli_query($link, $sql)) {
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+  }
 
-        $to = "liacuantongeorge@gmail.com";
-        $body = "";
-
-        $body .= "From: ".$customerName. "\r\n";
-        $body .= "Email: ".$customerEmail. "\r\n";
-        $body .= "Message: ".$customerMessage. "\r\n";
-
-        mail($to,$body);
-
-    }
-}
+$link -> close();
 
 ?>
