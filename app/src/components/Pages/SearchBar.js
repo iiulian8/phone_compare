@@ -10,19 +10,18 @@ function SearchBar() {
     const [phone_arr, setPArr] = useState([]);
     const [display_phones, setDArr] = useState([]);
     const [basket, updateBasket] = useContext(contextBasket);
-    
+
     useEffect(() => {
         function getObjects() {
             fetch('http://localhost/phone_compare/api/fetch_objects.php')
                 .then(response => response.json())
-                .then(data => setPArr([...data])
+                .then(data => {setPArr([...data]); setDArr([...data])}
                 )
         }
         getObjects();
 
     }, [])
 
-    
 
     function matchPhones(e) {
         e.preventDefault();
@@ -188,7 +187,7 @@ function SearchBar() {
             </div>
             <div className="phones-container">
                 {createPDisplay()}
-                
+
             </div>
 
         </div>
