@@ -95,7 +95,6 @@ function SearchBar() {
 
             }
 
-
             switch (phone.supp_name.toLowerCase()) {
                 case 'carphone warehouse':
                     supplierpic = supplier_photos.carphone;
@@ -166,7 +165,7 @@ function SearchBar() {
 
     return (
         <div id='compare-container'>
-
+       
             <div className="filters">
                 <div className="searchbar">
                     <input type="text" id="searchbar" value={search_field} placeholder="Search smartphone..." onChange={(e) => setSearch(e.target.value)}></input>
