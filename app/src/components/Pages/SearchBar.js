@@ -19,9 +19,13 @@ function SearchBar() {
                 )
         }
         getObjects();
+        
 
     }, [])
 
+    useEffect(() => {
+        console.log(phone_arr);
+    }, [phone_arr])
 
     function matchPhones(e) {
         e.preventDefault();

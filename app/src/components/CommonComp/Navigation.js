@@ -4,7 +4,7 @@ function Navigation() {
 
   return (
     <nav role='navigation'>
-      <a href='index.html' id='logo'>
+      <a href='/' id='logo'>
         <span>PHONECOMPARE.COM</span>
       </a>
       <input type='checkbox' id='hamburger-check'></input>
