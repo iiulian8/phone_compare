@@ -46,13 +46,10 @@ function Checkout() {
 
 	
 	function pushCustomer(e) {
-		e.preventDefault();
-
 		var formData = new FormData();
 		formData.append('customer_name', customer_name);
 		formData.append('customer_tel', phone_number);
 		formData.append('customer_email', email);
-		console.log('works');
 
 		Axios.post('http://localhost/phone_compare/api/customer.php', formData);
 	}

@@ -19,9 +19,13 @@ function SearchBar() {
                 )
         }
         getObjects();
+        
 
     }, [])
 
+    useEffect(() => {
+        console.log(phone_arr);
+    }, [phone_arr])
 
     function matchPhones(e) {
         e.preventDefault();
@@ -90,7 +94,6 @@ function SearchBar() {
                     break;
 
             }
-
 
             switch (phone.supp_name.toLowerCase()) {
                 case 'carphone warehouse':
@@ -162,7 +165,7 @@ function SearchBar() {
 
     return (
         <div id='compare-container'>
-
+       
             <div className="filters">
                 <div className="searchbar">
                     <input type="text" id="searchbar" value={search_field} placeholder="Search smartphone..." onChange={(e) => setSearch(e.target.value)}></input>
